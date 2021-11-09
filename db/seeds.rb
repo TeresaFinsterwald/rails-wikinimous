@@ -12,7 +12,7 @@ puts "creating articles"
 10.times do
   article = Article.new(
     title: Faker::Book.title,
-    content: Faker::Quote.famous_last_words
+    content: Faker::Lorem.paragraph
   )
   article.save
 end

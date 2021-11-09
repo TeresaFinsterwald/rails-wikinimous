@@ -1,8 +1,18 @@
-<h2><%= @article.title %></h2>
-<p><%= @article.content %></p>
-<%= link_to "Edit Article", edit_article_path %>
-<%= link_to "Back to Articles", articles_path %>
-<%= link_to "Delete #{@article.title}",
-            article_path(@article),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+<div class="nav">
+  <%= link_to "Wikinimous", articles_path %>
+  <%= link_to "Add article", new_article_path %>
+</div>
+
+<div class="articles" style="text-align: center;">
+  <div style="display: inline-block; text-align: left;">
+    <div class="head">
+      <h2><%= @article.title %></h2>
+      <%= link_to ('<i class="fas fa-edit"></i>').html_safe, edit_article_path %>
+      <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe,
+              article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </div>
+    <p><%= @article.content %></p>
+  </div>
+</div>
